@@ -1,6 +1,26 @@
 
 public class CSC320_CTA1_Option1 {
 
+	/**
+	 * psuedocode
+	 * 
+	 * class person:
+	 * 
+	 * 	member variables
+	 * 
+	 *  default constructor
+	 *  custom constructor 
+	 *  toString function to print all member variables
+	 * 
+	 * main function:
+	 *  create instance of person
+	 *  create instance of person with the custom constructor
+	 *  call each instance's toString method
+	 * 
+	 */
+	
+	
+	
 	private static class Person {
 		
 		String first;
