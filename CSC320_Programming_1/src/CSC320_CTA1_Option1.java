@@ -19,8 +19,6 @@ public class CSC320_CTA1_Option1 {
 	 * 
 	 */
 	
-	
-	
 	private static class Person {
 		
 		String first;
