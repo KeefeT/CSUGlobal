@@ -7,10 +7,18 @@ public class CSC320_CTA3_Option1 {
 	 * 
 	 * pseudocode:
 	 * 
-	 * take user input
-	 * send input to a function which will return the tax on that income
-	 * print tax withheld in main function
-	 * 
+	 * repeat - get user input (double) - until input > 0
+	 * if input less than 500
+	 *  rate = .1
+	 * else if input < 1500
+	 *  rate = .15
+	 * else if input < 2500
+	 *  rate = .2
+	 * else 
+	 *  rate = .3
+	 *  
+	 * print rate
+	 * print input times rate
 	 * 
 	 */
 	
@@ -33,11 +41,17 @@ public class CSC320_CTA3_Option1 {
 	
 	public static void main(String[] args) {		
 		Scanner input = new Scanner(System.in);
+		double income = -1;
+		double withheld;
 		
-		System.out.print("Enter income: ");
-		double income = input.nextDouble();
+		while (income <= 0) {
+			System.out.print("Enter income (above 0): ");
+			income = input.nextDouble();	
+		}
 		
-		System.out.println("Tax withheld: " + calculateTax(income));
+		withheld = calculateTax(income);
+		
+		System.out.printf("Tax withheld: %.2f", withheld);
 		
 		input.close();
 	}
