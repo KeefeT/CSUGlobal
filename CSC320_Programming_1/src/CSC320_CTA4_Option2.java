@@ -7,32 +7,18 @@ public class CSC320_CTA4_Option2 {
 	 * pseudocode:
 	 * 
 	 * create scanner
-	 * for loop
-	 *  take user input and fill into array
-	 *  if we see smallest value yet, set min to it
-	 *  if we see largest value yet, set max to it
-	 * send array to computeAverage function
-	 * print average
-	 * print min
-	 * print max
+	 * for loop 10 times
+	 * 	get user input
+	 * 	add input to array
+	 * 	check to see if input is min num seen
+	 * 	check to see if input is max num seen
+	 * 	add input to avg
 	 * 
-	 * computeAverage:
-	 *  for each element in array
-	 *   add element to avg variable
-	 *  return avg / array length 
-
+	 * divide avg by CLASS_SIZE to get average
+	 * 
+	 * print all data to console
+	 * 
 	 */
-	
-	
-	public static float computeAverage(float[] array) {
-		float avg = 0;
-		
-		for (float elem : array) {
-			avg += elem;
-		}
-		
-		return avg / (float)array.length;		
-	}
 	
 	public static void main(String[] args) {		
 		
@@ -43,6 +29,7 @@ public class CSC320_CTA4_Option2 {
 		
 		float min = Float.MAX_VALUE;
 		float max = Float.MIN_VALUE;
+		float avg = 0;
 		
 		for(int i = 0; i < CLASS_SIZE; i++) {
 			
@@ -56,11 +43,15 @@ public class CSC320_CTA4_Option2 {
 			if (arr[i] > max) {
 				max = arr[i];
 			}
+			
+			avg += arr[i];
 		}
 		
-		System.out.println("Average: " + computeAverage(arr));
-		System.out.println("Min: " + min);
-		System.out.println("Max: " + max);
+		avg = avg / CLASS_SIZE;
+		
+		System.out.println("Average: " + String.format("%.2f", avg));
+		System.out.println("Min: " + String.format("%.2f", min));
+		System.out.println("Max: " + String.format("%.2f", max));
 		
 		input.close();
 	}
