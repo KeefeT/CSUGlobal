@@ -6,9 +6,10 @@ public class CSC320_CTA5_Option1 {
 	/*
 	 * pseudocode:
 	 * 
-	 * create temp list
+	 * create temperature list
+	 * add temperatures
 	 * create week list
-	 * calculate weekly avg from average function
+	 * add days of week into list
 	 * 
 	 * while loop
 	 *  input of q quits
@@ -20,7 +21,8 @@ public class CSC320_CTA5_Option1 {
 	 * end loop
 	 * 
 	 * average function
-	 *  loop through list and sum elements
+	 *  loop through list 
+	 *  add each element to sum
 	 *  return sum / list.size()
 	 */
 	
@@ -59,7 +61,7 @@ public class CSC320_CTA5_Option1 {
 		
 		while (!input.equals("q")) {
 			
-			System.out.println("Enter day of the week to get average temperature for that day, or enter q to quit: ");
+			System.out.print("Enter day of the week to get average temperature for that day, enter 'week' for weekly average, or enter 'q' to quit: ");
 			input = scanner.next();
 			
 			if (input.equals("q")) {
@@ -80,7 +82,7 @@ public class CSC320_CTA5_Option1 {
 				
 				System.out.println("The average temperature for " + week.get(index) + " was " + temps.get(index) + " degrees F.");
 			} else if (input.equals("week")) {
-				System.out.format("The weekly average was %.2f degrees F", avg);
+				System.out.format("The weekly average was %.2f degrees F\n", avg);
 			} else {
 				System.out.println("Error: " + input + " is not a day of the week.\n");
 				continue;
