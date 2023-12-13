@@ -1,0 +1,6 @@
+Car 0:
+2007 Ford Fusion, red, 195000 miles
+Car 1:
+2021 Jeep Wrangler, white, 42000 miles
+Car 2:
+1002 toyota tacoma, red, 1302 miles
