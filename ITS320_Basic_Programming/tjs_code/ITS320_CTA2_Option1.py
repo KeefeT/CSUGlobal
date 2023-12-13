@@ -35,4 +35,5 @@ def main():
     print("has upper: " + str(hasUpper))
 
 
-main()
+if __name__ == '__main__':
+    main()

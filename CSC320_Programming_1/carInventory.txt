@@ -1,0 +1,7 @@
+Car 1:
+Make: Subaru
+Model: Forester
+Color: black
+Year: 2012
+Mileage: 155000
+
