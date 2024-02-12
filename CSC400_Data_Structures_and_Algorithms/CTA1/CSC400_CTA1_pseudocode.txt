@@ -1,0 +1,136 @@
+CSC400 CTA1 
+Thomas Keefe
+02/12/2024
+
+psuedocode
+
+----------------------------------------------------------------------------------------------------------------
+
+Bag of Type T (generic) interface 
+    //interface copied from module 1.2
+    function getCurrentSize() - returns int, number of items in the bag
+    function isEmpty() - returns boolean, true if bag has no items
+    function add(T itemToAdd) - returns booelan, true if item was successfully added to bag
+    function remove() - returns T, first item in bag of type T that was removed, null if bag is empty
+    function remove(T itemToRemove) - returns boolean, true if itemToRemove was successfully removed
+    function getFrequencyOf(T item) - returns int, number of instances of item in bag
+    function contains(T item) - returns boolean, true if item is in bag
+    function toArray() - returns T[], array of items in bag
+
+----------------------------------------------------------------------------------------------------------------
+
+
+ShoppingCart class implements Bag of type 'ShoppingItem'
+
+    private field - default_capacity - int - size of bag
+    private field - numberOfProducts - int - current number of items in the bag
+    private field - myBag - array of 'ShoppingItem' - data structure
+
+    constructor ShoppingCart()
+        set default_capacity to 10
+        set numberOfProducts to 0
+        initialize myBag to empty 'ShoppingItem' array of size default_capacity
+
+    constructor ShoppingCart(int maxSize)
+        set default_capacity to maxSize
+        set numberOfProducts to 0
+        initialize myBag to empty 'ShoppingItem' array of size default_capacity
+
+    function getCurrentSize()
+        returns int, number of products in bag
+
+    function isEmpty()
+        returns boolean, true if bag is empty (number of products in bag is 0)
+
+    function add('ShoppingItem' item)
+        if bag is full
+            return false - can't add new item 
+
+        for every index in bag
+            if bag at index is empty
+                set myBag[index] to item
+                increment numberOfProducts
+                return true
+
+        return false - we only hit this case if for some reason we couldn't find an empty spot
+
+    function remove()
+        field itemToReturn, ShoppingItem that was removed from bag
+
+        if bag is empty
+            return false - can't remove item from nothing
+
+        for every index in bag
+            if myBag[index] is not null
+                set itemToReturn to myBag[index]
+                set myBag[index] to null
+                decrement numberOfProducts
+                break out of for loop
+
+        return itemToReturn - returns null if list is empty
+
+    function remove('ShoppingItem' item)
+        if bag is empty
+            return false - can't remove 'item' from nothing
+
+        for every index in bag
+            if item to remove IS myBag[index]
+                set myBag[index] to empty
+                decrement numberOfProducts
+                return true - successfully removed 'item' from bag
+
+        return false - we only hit this case if we couldn't find item to remove
+
+    function getFrequencyOf('ShoppingItem' item)
+        field count, int
+        set count to zero
+
+        for every index in bag
+            if item IS myBag[index]
+                increment count
+
+        return count - total count of all 'item' in bag
+
+    function contains('ShoppingItem' item)
+        for every index in bag
+            if item IS myBag[index]
+                return true - item is in bag
+
+        return false - item is not in bag
+
+    function toArray()
+        returns myBag field - myBag is already an array so we don't have to convert it to anything
+
+----------------------------------------------------------------------------------------------------------------
+
+ShoppingItem class
+
+    private field - customerNumber - int - unique customer id
+    private field - sku - int - unique item id
+    private field - itemName - String - plain text item name
+    private field - price - double - price of item
+
+    constructor ShoppingItem(int customerNumber, int sku, String itemName, double price)
+        set all private fields to what was passed in from parameters
+
+    function getCustomerNumber()
+        returns int, customerNumber
+
+    function getSku()
+        returns int, sku
+
+    function getItemName()
+        returns String, itemName
+
+    function getPrice()
+        returns double, price
+
+    function equals(ShoppingItem item)
+        compares all fields between 'this' and item
+        if all fields are identical
+            return true - objects are identical
+        else 
+            return false - objects are not identical
+
+    function toString()
+        returns String, String representation of all fields
