@@ -24,7 +24,9 @@ int main()
     cout << "num 1: " << i2 << ", p_num 1: " << *p_i2 << endl;
     cout << "num 1: " << i3 << ", p_num 1: " << *p_i3 << endl;
 
-    delete p_i1, p_i2, p_i3;
+    delete p_i1;
+    delete p_i2;
+    delete p_i3;
 
    return 0;
 }
