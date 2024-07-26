@@ -17,6 +17,7 @@ int main()
         file << user_input;
     } else 
     {
+        cout << "Failed to open file!" << endl;
         return 1;
     }
 
@@ -35,6 +36,7 @@ int main()
             temp.clear();
         }
     } else {
+        cout << "Failed to open reversed file!" << endl;
         return 1;
     }
 

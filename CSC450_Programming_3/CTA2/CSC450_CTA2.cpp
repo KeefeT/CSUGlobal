@@ -9,7 +9,7 @@ int main()
 
     for (int i = 0; i < 3; i++) 
     {
-        cout << "Run number " << i+1 << endl;
+        //cout << "Run number " << i+1 << endl;
         cout << "String 1: ";
         getline(cin, in1);
         cout << "String 2: ";
